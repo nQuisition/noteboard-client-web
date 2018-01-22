@@ -1,0 +1,13 @@
+.controls-bar {
+  width: 100%;
+  background-color: gray;
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+
+  button {
+    padding: 5px 40px 5px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;
+  }
+}

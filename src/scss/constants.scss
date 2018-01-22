@@ -1,0 +1,12 @@
+$note-border-color: rgb(225, 225, 225);
+$notification-border-color: rgb(200, 200, 200);
+$default-shadow: 0px 2px 2px -2px rgba(180,180,180,0.7);
+
+@mixin default-border($color) {
+  border: {
+    top: 1px solid $color;
+    right: 1px solid $color;
+    left: 1px solid $color;
+    bottom: 2px solid $color;
+  }
+}

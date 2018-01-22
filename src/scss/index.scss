@@ -1,0 +1,77 @@
+@import './constants.scss';
+@import './controls.scss';
+@import './fonts.scss';
+@import './notification.scss';
+
+body, button {
+  font-family: $pt-sans;
+}
+
+.note-header {
+  //cursor: move;
+  font-size: 17px;
+  padding: 15px;
+  //background-color: lightgray;
+  //border-bottom: 1px solid ;
+  font-weight: bold;
+}
+
+.note-body {
+  font-size: 14px;
+  padding: 15px;
+}
+
+.note-container {
+  color: rgba(0, 0, 0, 0.85);
+  margin: 8px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: $default-shadow;
+  //position: absolute;
+  width: 250px;
+  min-height: 150px;
+  border-radius: 3px;
+  word-wrap: break-word;
+  @include default-border($note-border-color);
+}
+
+.note-editor-bg {
+  background-color: rgb(200, 200, 200);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10000;
+
+  &.active {
+    opacity: 0.7;
+  }
+}
+
+.note-editor {
+  background-color: white;
+  position: fixed;
+  opacity: 0;
+  left: 500px;
+  top: 200px;
+  padding: 10px;
+  z-index: 10001;
+  transition: opacity 0.3s ease;
+  width: 400px;
+  height: 200px;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.board {
+  background-color: rgb(240, 240, 240);
+  width: 1860px;
+  height: 2000px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
