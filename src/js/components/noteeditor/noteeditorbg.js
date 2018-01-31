@@ -4,6 +4,11 @@ class NoteEditorBG extends React.Component {
   constructor(props){
     super(props);
     this.handleResize = this.handleResize.bind(this);
+    this.state = {
+      fading: true,
+      height: window.innerHeight,
+      width: window.innerWidth
+    }
   }
 
   handleResize() {

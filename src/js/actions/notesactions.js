@@ -18,6 +18,7 @@ export const UPDATE_NOTE_FAILURE = 'UPDATE_NOTE_FAILURE';
 
 export const EDIT_NOTE_START = 'EDIT_NOTE_START';
 export const EDIT_NOTE_STOP = 'EDIT_NOTE_STOP';
+export const EDIT_NOTE_CANCEL = 'EDIT_NOTE_CANCEL';
 
 export function fetchNotes() {
   return dispatch => {
@@ -83,5 +84,11 @@ export function startNoteEdit(id) {
 export function stopNoteEdit() {
   return dispatch => {
     dispatch({type: EDIT_NOTE_STOP});
+  }
+}
+
+export function cancelNoteEdit() {
+  return dispatch => {
+    dispatch({type: EDIT_NOTE_CANCEL});
   }
 }

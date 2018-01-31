@@ -2,7 +2,7 @@ import { FETCH_NOTES_REQUEST, FETCH_NOTES_SUCCESS, FETCH_NOTES_FAILURE,
   ADD_NOTES_REQUEST, ADD_NOTES_SUCCESS, ADD_NOTES_FAILURE,
   DELETE_NOTES_REQUEST, DELETE_NOTES_SUCCESS, DELETE_NOTES_FAILURE,
   UPDATE_NOTE_REQUEST, UPDATE_NOTE_SUCCESS, UPDATE_NOTE_FAILURE,
-  EDIT_NOTE_START, EDIT_NOTE_STOP } from '../actions/notesactions';
+  EDIT_NOTE_START, EDIT_NOTE_STOP, EDIT_NOTE_CANCEL } from '../actions/notesactions';
 
 function processNote(note) {
   return {
@@ -75,6 +75,9 @@ export default function reducer(state = {
     }
     case EDIT_NOTE_STOP: {
       return {...state, updateRequired: true};
+    }
+    case EDIT_NOTE_CANCEL: {
+      return {...state, updateRequired: false, editingNote: null};
     }
   }
   return state;

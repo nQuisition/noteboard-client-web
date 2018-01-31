@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deleteNote, startNoteEdit, stopNoteEdit, updateNote } from '../actions/notesactions';
+import { deleteNote, startNoteEdit, stopNoteEdit, cancelNoteEdit, updateNote } from '../actions/notesactions';
 import Board from '../components/board';
 
 const mapStateToProps = state => {
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => {
     onDeleteClick: id => { dispatch(deleteNote(id)); },
     onNoteClick: note => { dispatch(startNoteEdit(note)); },
     onEditorBGClick: () => { dispatch(stopNoteEdit()); },
+    onCancelEditClick: () => { dispatch(cancelNoteEdit()); },
     onUpdateRequired: (id, title, body) => { dispatch(updateNote(id, title, body)); }
   }
 }
