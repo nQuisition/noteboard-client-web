@@ -50,7 +50,7 @@ export function addNote(title, body) {
 export function deleteNote(id) {
   return dispatch => {
     dispatch({type: DELETE_NOTES_REQUEST, payload: {id}});
-    const params = { noteid:id };
+    const params = { noteId:id };
     callApi('delete', 'note/', params)
       .then(response => {
         dispatch({type: DELETE_NOTES_SUCCESS, payload: response.data});
@@ -64,7 +64,7 @@ export function deleteNote(id) {
 export function updateNote(id, title, body) {
   return dispatch => {
     dispatch({type: UPDATE_NOTE_REQUEST});
-    const params = { noteid:id, note: {title, body} };
+    const params = { noteId:id, note: {title, body} };
     callApi('patch', 'note/', params)
       .then(response => {
         dispatch({type: UPDATE_NOTE_SUCCESS, payload: response.data});

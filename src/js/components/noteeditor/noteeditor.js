@@ -17,10 +17,11 @@ class NoteEditor extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log(this.state);
     if(this.props.updateRequired) {
       const { onUpdateRequired } = this.props;
       const { note } = this.state;
-      onUpdateRequired(note._id, note.title, note.body);
+      onUpdateRequired(note.id, note.title, note.body);
     }
   }
 

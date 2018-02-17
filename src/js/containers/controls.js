@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onFetchClick: () => { dispatch(fetchNotes()); },
     onAddClick: (title, body) => { dispatch(addNote(title, body)); },
-    onSignInClick: () => { dispatch(signIn('user@noteboard.com', 'virtuoso1337'))
+    onSignInClick: () => { dispatch(signIn('user@noteboard.com', 'password'))
       .then(() => { dispatch(fetchNotes()) }); }
   };
 };

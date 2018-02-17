@@ -44,10 +44,10 @@ export default function reducer(state = {
 
     case DELETE_NOTES_REQUEST: {
       return {...state, notes: state.notes.map(note =>
-        note._id === action.payload.id?{...note, deleting:true}:note)};
+        note.id === action.payload.id?{...note, deleting:true}:note)};
     }
     case DELETE_NOTES_SUCCESS: {
-      return {...state, notes: state.notes.filter(note => note._id !== action.payload.note._id)};
+      return {...state, notes: state.notes.filter(note => note.id !== action.payload.note.id)};
     }
     //TODO need to enable delete button for the note, but where to get the note._id?
     case DELETE_NOTES_FAILURE: {
@@ -61,7 +61,7 @@ export default function reducer(state = {
       const updatedNote = action.payload.note;
       return {
         ...state,
-        notes: state.notes.map(note => note._id!==updatedNote._id?note:{...note, ...updatedNote})
+        notes: state.notes.map(note => note.id!==updatedNote.id?note:{...note, ...updatedNote})
       };
     }
 
@@ -69,7 +69,7 @@ export default function reducer(state = {
       return {
         ...state,
         editingNote: {
-          ...state.notes.find(x => x._id === action.payload.id)
+          ...state.notes.find(x => x.id === action.payload.id)
         }
       };
     }

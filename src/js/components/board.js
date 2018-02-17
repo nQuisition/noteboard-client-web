@@ -8,7 +8,7 @@ const Board = ({ notes, editingNote, updateRequired,
     onCancelEditClick }) => {
   const className = "board";
   const items = notes.map(note =>
-    <BaseNote key={note._id} note={note} onDeleteClick={onDeleteClick} onNoteClick={onNoteClick} />
+    <BaseNote key={note.id} note={note} onDeleteClick={onDeleteClick} onNoteClick={onNoteClick} />
   );
   return <div className={className}>
     { items }
